@@ -1,0 +1,625 @@
+/* Welcome to Compass.
+* In this file you should write your main styles. (or centralize your imports)
+* Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "base";
+
+
+html,
+body {
+ width: 100%;
+ height: 100%;
+}
+
+body {
+ font-size: 100%;
+ text-align: center;
+ font-size: 16px;
+ line-height: 1.5;
+ color: $color-dark-grey;
+ font-family: $font-as;
+ overflow-x: hidden;
+ -webkit-overflow-scrolling: touch;
+ background-color: $color-light-yellow;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, li, dt, dd, label, div, span {
+ font-family: $font-as;
+}
+
+h2 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+p {
+ font-size: 16px;
+ line-height: 1.5em;
+ @media only screen and (max-width: 700px) {
+   font-size: 18px;
+ }
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+ color: $color-dark-grey;
+ text-decoration: none;
+ &:visited {
+   color: $color-dark-grey;
+ }
+ &:hover {
+ 	color: $color-light-grey;
+ }
+}
+
+
+/*
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection rule sets have to be separate.
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+ background: $color-light-yellow;
+ text-shadow: none;
+}
+
+::selection {
+ background: $color-light-yellow;
+ text-shadow: none;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+
+hr {
+ display: block;
+ height: 1px;
+ border: 0;
+ border-top: 1px solid #ccc;
+ margin: 1em 0;
+ padding: 0;
+}
+
+/*
+* Remove the gap between images, videos, audio and canvas and the bottom of
+* their containers: h5bp.com/i/440
+*/
+
+audio,
+canvas,
+img,
+svg,
+video {
+ vertical-align: middle;
+}
+
+/*
+* Remove default fieldset styles.
+*/
+
+fieldset {
+ border: 0;
+ margin: 0;
+ padding: 0;
+}
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+
+textarea {
+ resize: vertical;
+}
+
+/* ==========================================================================
+Browse Happy prompt
+========================================================================== */
+
+.browserupgrade {
+ margin: 0.2em 0;
+ background: #ccc;
+ color: #000;
+ padding: 0.2em 0;
+}
+
+* {
+ @include box-sizing(border-box);
+}
+
+ul {
+ display: inline-block;
+}
+
+strong {
+ font-weight: 700;
+}
+
+em {
+ font-style: italic;
+}
+
+.judyssite {
+	width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bg-image {
+  width: 100%;
+  $image: 'cv.jpg';
+  margin: 0 auto;
+  background: {
+    color: $color-light-yellow;
+    image: image_url($image);
+    repeat: no-repeat;
+    size: cover;
+    attachment: fixed;
+    position: center;
+  }
+}
+
+nav {
+  width: 100%;
+  background-color: $color-light-yellow;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+  clear: both;
+  max-width: 1300px;
+	a {
+		text-decoration: none;
+	}
+}
+
+.nav-info {
+	width: 60%;
+	float: left;
+	margin: 35px 0 20px 30px;
+	li {
+		text-align: left;
+		line-height: 2em;
+    font-size: 20px;
+	}
+}
+
+.show {
+  display: block !important;
+}
+
+.nav-mobile {
+	width: auto;
+	float: right;
+	margin: 40px 30px 30px 0;
+	.dropdown {
+		overflow: hidden;
+		.dropbtn {
+			cursor: pointer;
+			display: inline-block;
+			border: none;
+			background-color: $color-light-yellow;
+		}
+	}
+}
+
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 5px;
+    background-color: $color-dark-grey;
+    margin: 6px 0;
+    transition: 0.4s;
+    z-index: 999;
+    position: relative;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: $color-light-yellow;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: $color-light-yellow;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $color-dark-grey;
+  min-width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dropdown-content li {
+	&:first-child {
+		margin-top: 20%;
+	}
+	a {
+  float: none;
+  color: $color-light-yellow;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  }
+}
+
+.dropdown-content a:hover {
+  background-color: $color-light-yellow;
+  color: $color-dark-grey;
+}
+
+.social-icons {
+   float: left;
+   margin: 0 30px 10px 30px;
+   width: auto;
+   height: auto;
+   clear: both;
+   a {
+     display: inline-block;
+     &.social-facebook {
+       $image: "facebook.png";
+       background: image-url($image) no-repeat transparent;
+       width: 35px;
+	     height: 35px;
+	     background-size: contain;
+       border: 0;
+       margin-right: 10px;
+     }
+     &.social-instagram {
+       $image: "instagram.png";
+       background: image-url($image) no-repeat transparent;
+       width: 35px;
+	     height: 35px;
+	     background-size: contain;
+       border: 0;
+       margin-right: 10px;
+     }
+     &.social-linkedin {
+       $image: "linkedin.png";
+       background: image-url($image) no-repeat transparent;
+       width: 35px;
+	     height: 35px;
+	     background-size: contain;
+       border: 0;
+       margin-right: 10px;
+     }
+   }
+}
+
+.padded {
+	margin: 0 30px;
+}
+
+.border {
+	background-color: #979797;
+	height: 1px;
+	width: 100%;
+	margin: 0;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+p.name {
+	font-size: 30px;
+	font-weight: 700;
+	text-align: left;
+	margin-left: 30px;
+  margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.menu-content {
+	display: none;
+}
+
+section {
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: auto;
+ clear: both;
+ margin: 0 auto;
+}
+
+#home {
+  background-color: $color-light-pink;
+  position: relative;
+  .container {
+    padding: 40px 30px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+}
+
+.main-image {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1140px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.welcome {
+  width: 100%;
+  overflow: hidden;
+  background-color: $color-light-yellow;
+  margin: 20px auto 0 auto;
+  h2 {
+    text-align: center;
+    padding: 20px;
+  }
+  p {
+    padding: 0 20px 20px;
+  }
+}
+
+#cv {
+  clear: both;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .cv-container-medium {
+    max-width: 1040px;
+    margin: 0 auto;
+    background-color: transparent;
+    height: 300px;
+    position: relative;
+  }
+
+  .cv-header {
+    width: 100%;
+    text-align: left;
+    margin: 0 30px;
+    @include vertical-align(absolute, 50%);
+    h3 {
+     font-size: 45px;
+     font-weight: 700;
+     color: $color-light-yellow;
+    }
+    p {
+      font-size: 20px;
+      color: $color-light-yellow;
+    }
+  }
+
+  .cv-container-big {
+    width: 100%;
+    background-color: $color-orange-red;
+    margin: 0 auto;
+  }
+
+  .cv-container {
+    padding: 0 30px 60px 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    .cv-images {
+      display: block;
+      margin-top: 30px;
+      padding-bottom: 15px;
+    }
+    li {
+      text-align: left;
+      clear: both;
+      padding-top: 30px;
+    }
+    h3 {
+      font-size: 30px;
+      color: $color-light-yellow;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+      color: $color-light-yellow;
+      font-weight: 300;
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 700px) {
+	.nav-info {
+		margin-left: 80px;
+		margin-bottom: 10px;
+		float: left;
+		width: 60%;
+		text-align: left;
+		li {
+			display: inline-block;
+			font-size: 18px;
+			padding-right: 40px;
+
+		}
+	}
+
+	.social-icons {
+		float: right;
+		width: auto;
+		clear: none;
+		margin: 35px 80px 10px 0;
+	}
+
+	.nav-mobile {
+		display: none;
+	}
+
+	.padded {
+		margin: 0 80px;
+	}
+
+	.menu {
+		overflow: hidden;
+    max-width: 1300px;
+    margin: 0 auto;
+	  p.name {
+			width: auto;
+			float: left;
+			margin-left: 80px;
+			margin-top: 10px;
+	  }
+
+	  .menu-content {
+	  	display: block;
+	  	float: right;
+	  	width: auto;
+	  	margin-right: 80px;
+	  	margin-top: 20px;
+	  	li {
+	  		display: inline-block;
+	  		margin: 0 10px;
+	  		font-size: 18px;
+	  		&:last-child {
+	  			margin-right: 0;
+	  		}
+	  	}
+	  }
+	}
+
+	.social-icons {
+		margin-top: 40px;
+   a {
+     &.social-facebook {
+       width: 25px;
+	     height: 25px;
+     }
+     &.social-instagram {
+       width: 25px;
+	     height: 25px;
+     }
+     &.social-linkedin {
+       width: 25px;
+	     height: 25px;
+     }
+   }
+  }
+
+  #home {
+    min-height: 800px;
+    .welcome {
+      @include both-align(absolute, 50%, 60%);
+      width: 80%;
+      max-width: 940px;
+      margin-bottom: 30px;
+      h2 {
+        font-size: 50px;
+        padding: 40px 50px;
+      }
+      p {
+        font-size: 25px;
+        padding: 0 50px 40px 50px;
+      }
+    }
+  }
+
+
+  #cv {
+    .cv-container {
+      li {
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+      }
+      p {
+        padding-right: 30px;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@media (min-width: 1024px) {
+  .welcome {
+    h2 {
+      font-size: 88px;
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

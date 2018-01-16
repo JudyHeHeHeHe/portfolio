@@ -1,0 +1,69 @@
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/border-radius";
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,700,700i);
+
+// @import "compass/utilities/sprites";
+// @import "social/*.png";
+// @include all-social-sprites;
+// @import "breakpoint";
+
+
+// Fonts
+$font-as: 'Alegreya Sans', sans-serif;
+
+
+// Colors
+$color-light-yellow: #fff5e2;
+$color-light-pink: #df988c;
+$color-orange-red: #c9513e;
+$color-light-grey: #8f9595;
+$color-dark-grey: #455661;
+
+
+// Centering: NOTE - requires absolute or relative positioning
+@mixin vertical-align($position: relative, $offset: 50%) {
+  position: $position;
+  top: $offset;
+  @include transform(translateY(-50%));
+}
+
+// for use with absolute or relatively positioned elements
+@mixin horizontal-align($position: relative, $offset: 50%) {
+  position: $position;
+  left: $offset;
+  @include transform(translateX(-50%));
+}
+
+@mixin both-align($position: relative, $offset-left: 50%, $offset-top: 50%) {
+  position: $position;
+  left: $offset-left;
+  top: $offset-top;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin clear-align($position: relative) {
+  position: $position;
+  left: auto;
+  top: auto;
+  @include transform(none);
+}
+
+// use this on parent of vertically aligned element
+// if vertically aligned element becomes blurry
+@mixin center-aligned-parent {
+  @include transform-style(preserve-3d);
+}
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
