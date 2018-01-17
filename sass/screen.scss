@@ -166,7 +166,7 @@ em {
 
 nav {
   width: 100%;
-  background-color: $color-light-yellow;
+  background-color: $color-white;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -467,13 +467,125 @@ section {
         }
       }
     }
+    .downloadbtn {
+      display: block;
+      margin: 0 auto;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
+     .button {
+      background: $color-light-yellow url("../images/pdf-icon.png") 30px -11px no-repeat !important;
+        width: 250px;
+        height: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: $color-dark-grey;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        text-align: right;
+        padding-right: 60px;
+        }
+
+      .button:hover {
+        background-color: $color-light-yellow;
+        box-shadow: 0px 10px 15px $color-light-yellow;
+        color: $color-orange-red;
+        transform: translateY(-7px);
+      }
+  }
+}
+
+#projects {
+  width: 100%;
+  background-color: $color-light-yellow;
+  margin: 0 auto;
+  overflow: hidden;
+
+  h3 {
+    padding-top: 40px;
+    font-size: 48px;
+    color: $color-orange-red;
+    font-weight: 700;
   }
 
+  p {
+    font-size: 26px;
+    color: $color-dark-grey;
+    font-style: italic;
+    font-weight: 700;
+    padding-bottom: 40px;
+  }
+  .swiper-container {
+    width: 100%;
+  }
 
+  .desktop {
+    display: none;
+    visibility: none;
+  }
 
+  .swiper-slide.slider-image-1, .swiper-slide.slider-image-2, .swiper-slide.slider-image-3, .swiper-slide.slider-image-4, .swiper-slide.slider-image-5, .swiper-slide.slider-image-6, .swiper-slide.slider-image-7, .swiper-slide.slider-image-8, .swiper-slide.slider-image-9, .swiper-slide.slider-image-10 {
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+    background-position: top center;
+  }
 
+  .slider-image-1 {
+    background: url("../images/slides/ACWIS1.jpg") center no-repeat;
+  }
 
+  .slider-image-2 {
+    background: url("../images/slides/AWF1.jpg") center no-repeat;
+  }
 
+  .slider-image-3 {
+    background: url("../images/slides/SH1.jpg") center no-repeat;
+  }
+
+  .slider-image-4 {
+    background: url("../images/slides/NASALA1.jpg") center no-repeat;
+  }
+
+  .slider-image-5 {
+    background: url("../images/slides/HFH2.jpg") center no-repeat;
+  }
+
+  .slider-image-6 {
+    background: url("../images/slides/NYU1.jpg") center no-repeat;
+  }
+
+  .slider-image-7 {
+    background: url("../images/slides/AWF3.jpg") center no-repeat;
+  }
+
+   .slider-image-8 {
+    background: url("../images/slides/AWF2.jpg") center no-repeat;
+  }
+
+  .slider-image-9 {
+    background: url("../images/slides/DPA2.jpg") center no-repeat;
+  }
+
+  .slider-image-10 {
+    background: url("../images/slides/RA1.jpg") center no-repeat;
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background: $color-dark-grey;
+
+  }
 }
 
 
@@ -539,7 +651,7 @@ section {
 	.menu {
 		overflow: hidden;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 	  p.name {
 			width: auto;
 			float: left;
@@ -620,27 +732,12 @@ section {
            margin: 20px 30px;
          }
        }
-      
-      
-       
-      
-
+    }
   }
 
+  #projects {
 
-
-
-
-
-
-
-
-
-
-
-
-
-}
+  }
 
 
 @media (min-width: 1024px) {
@@ -669,11 +766,11 @@ section {
   }
 
 
-        
-        
-      
-    
-    
+
+
+
+
+
   }
 
 

@@ -62,6 +62,28 @@ bar3.animate(0.7);  // Number from 0.0 to 1.0
 bar4.animate(0.5);  // Number from 0.0 to 1.0
 
 
+(function($){
+$(document).ready(function () {
+  //initialize swiper when document ready
+   var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    }
+    });
+});
+})(jQuery);
+
+
 
 
 
