@@ -413,27 +413,64 @@ section {
     padding: 0 30px 60px 30px;
     max-width: 1300px;
     margin: 0 auto;
-    .cv-images {
-      display: block;
-      margin-top: 30px;
-      padding-bottom: 15px;
+    .brief {
+      .cv-images {
+        display: block;
+        margin-top: 30px;
+        padding-bottom: 15px;
+      }
+      li {
+        text-align: left;
+        clear: both;
+        padding-top: 30px;
+      }
+      h3 {
+        font-size: 30px;
+        color: $color-light-yellow;
+        font-weight: bold;
+      }
+      p {
+        font-size: 20px;
+        color: $color-light-yellow;
+        font-weight: 300;
+      }
     }
-    li {
-      text-align: left;
-      clear: both;
-      padding-top: 30px;
-    }
-    h3 {
-      font-size: 30px;
-      color: $color-light-yellow;
-      font-weight: bold;
-    }
-    p {
-      font-size: 20px;
-      color: $color-light-yellow;
-      font-weight: 300;
+    .skills {
+      width: 100%;
+      margin: 60px auto 0 auto;
+      .set {
+        margin: 0 auto 60px auto;
+        display: block;
+        width: 240px;
+        position: relative;
+        p {
+          position: absolute;
+          z-index: 10;
+          font-size: 28px;
+          padding: 0;
+          @include both-align(absolute, 50%, 50%)
+        }
+        .yellow {
+            color: $color-light-yellow;
+          }
+        .pie {
+          width: 240px;
+          -webkit-border-radius: 120px;
+          -moz-border-radius: 120px;
+          border-radius: 120px;
+        }
+        .yellow-pie {
+          background: $color-light-yellow;
+        }
+        .grey-pie {
+          background: $color-dark-grey;
+        }
+      }
     }
   }
+
+
+
 
 
 
@@ -570,11 +607,24 @@ section {
         display: inline-block;
         width: 33%;
         vertical-align: top;
-      }
-      p {
-        padding-right: 30px;
-      }
-    }
+        p {
+         padding-right: 30px;
+       }
+         }
+       .skills {
+        margin-top: 40px;
+         .set {
+           display: inline-block;
+           width: 50%;
+           max-width: 240px;
+           margin: 20px 30px;
+         }
+       }
+      
+      
+       
+      
+
   }
 
 
@@ -598,6 +648,32 @@ section {
     h2 {
       font-size: 88px;
     }
+  }
+
+  #cv {
+    .cv-container {
+      .skills {
+        .set {
+          display: inline-block;
+          width: 180px;
+          margin: 0 20px;
+          .pie {
+            width: 180px;
+            -webkit-border-radius: 90px;
+            -moz-border-radius: 90px;
+            border-radius: 90px;
+          }
+        }
+      }
+    }
+  }
+
+
+        
+        
+      
+    
+    
   }
 
 

@@ -16,14 +16,53 @@ function myFunction() {
 	}
 
 
-var bar = new ProgressBar.Circle(progress, {
+var bar1 = new ProgressBar.Circle(progress1, {
+  strokeWidth: 5,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#df988c',
+  trailColor: '#8f9595',
+  trailWidth: 2,
+  svgStyle: null
+});
+
+var bar2 = new ProgressBar.Circle(progress2, {
   strokeWidth: 6,
   easing: 'easeInOut',
   duration: 1400,
-  color: '#FFEA82',
-  trailColor: '#eee',
+  color: '#df988c',
+  trailColor: '#8f9595',
   trailWidth: 1,
   svgStyle: null
 });
 
-bar.animate(0.7);  // Number from 0.0 to 1.0
+var bar3 = new ProgressBar.Circle(progress3, {
+  strokeWidth: 5,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#df988c',
+  trailColor: '#8f9595',
+  trailWidth: 2,
+  svgStyle: null
+});
+
+var bar4 = new ProgressBar.Circle(progress4, {
+  strokeWidth: 6,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#df988c',
+  trailColor: '#8f9595',
+  trailWidth: 1,
+  svgStyle: null
+});
+
+bar1.animate(0.9);  // Number from 0.0 to 1.0
+bar2.animate(0.8);  // Number from 0.0 to 1.0
+bar3.animate(0.7);  // Number from 0.0 to 1.0
+bar4.animate(0.5);  // Number from 0.0 to 1.0
+
+
+
+
+
+
