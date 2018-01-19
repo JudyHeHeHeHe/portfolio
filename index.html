@@ -265,40 +265,45 @@
   </section>
   <section id="contact">
   <div class="contact-container">
-   <!--  <div class="contact-info normal">
-      <p>
-        510 Main Street<br/>New York, NY 10000<br/>
-      </p>
-      <p>
-        Looking forward to hearing from you soon!
-      </p>
-      <div class="contact-box">
-        <h4>Let's <br/> Connect</h4>
-        <p id="connect" class="connect">
-          Connect&nbsp;&nbsp;&nbsp;&gt;
+      <div class="contact-info" id="contact-info">
+        <p>
+          510 Main Street<br/>New York, NY 10000<br/>
         </p>
+        <p>
+          Looking forward to hearing from you soon!
+        </p>
+        <div class="contact-box">
+          <h4>Let's <br/> Connect</h4>
+          <p id="connect" class="connect">
+            Connect&nbsp;&nbsp;&nbsp;&gt;
+          </p>
+        </div>
       </div>
-    </div> -->
-    <div class="contact-info-hover hover">
+    <div class="contact-info-hover hide" id="contact-info-hover">
 
       <div class="contact-box-hover">
               <h4>Let's Connect</h4>
           <div class="contact-form">
-        <form method="post" action="contact-form.php">
-        <label for="Name"></label>
-        <input type="text" name="Name" id="Name" placeholder="Name" />
+        <form id="contact-form" method="post" action="/contact-form">
 
-        <label for="Number"></label>
-        <input type="text" name="Number" id="Number" placeholder="Number" />
+        <input type="text" id="name" name="name" placeholder="name" class="required" />
+      <input type="email" id="email" name="email" placeholder="email" class="required" />
+      <input type="tel" id="phone" name="phone" placeholder="phone" />
 
-        <label for="Email"></label>
-        <input type="text" name="Email" id="Email" placeholder="Email"/>
+      <textarea id="message" name="message" placeholder="message" class="required" ></textarea>
 
-        <label for="Comment"></label><br />
-        <textarea name="Comment" rows="20" cols="20" id="Comment" placeholder="Please leave me a message"></textarea>
+      <p class="error-message"><span style="color:#c9513e;">*&nbsp;</span>Please check that the info is correct in these fields.</p>
 
-        <input type="submit" name="submit" value="Submit" class="submit-button" />
+         <div class="button-container">
+        <button type="submit" id="submit" name="submit" class="submit-button">send</button>
+      </div>
       </form>
+       <img src="/img/ajax-loader-6d91c162.gif" alt="" class="ajax-loader">
+        <div class="form-success">
+      <p>Thanks for reaching out!<br/> I’ll get back to you soon.</p>
+
+
+    </div>
        </div>
 
 
