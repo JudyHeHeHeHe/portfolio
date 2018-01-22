@@ -3,7 +3,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3";
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200);
 // @import "compass/utilities/sprites";
 // @import "social/*.png";
 // @include all-social-sprites;
@@ -12,6 +12,7 @@
 
 // Fonts
 $font-as: 'Slabo 27px', serif;
+$font-ms: 'Montserrat', sans-serif;
 
 
 // Colors

@@ -152,6 +152,7 @@ em {
 
 .bg-image {
   width: 100%;
+  height: 100%;
   $image: 'cv.jpg';
   margin: 0 auto;
   background: {
@@ -159,7 +160,7 @@ em {
     image: image_url($image);
     repeat: no-repeat;
     size: cover;
-    attachment: fixed;
+    attachment: scroll;
     position: center;
   }
 }
@@ -208,7 +209,8 @@ nav {
 			cursor: pointer;
 			display: inline-block;
 			border: none;
-			background-color: $color-light-yellow;
+			background-color: $color-white;
+      padding: 0;
 		}
 	}
 }
@@ -243,6 +245,7 @@ nav {
   background-color: $color-dark-grey;
   min-width: 100%;
   height: 100%;
+  min-height: 500px;
   z-index: 100;
 }
 
@@ -604,7 +607,7 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 550px;
+    min-height: 650px;
     margin: 0 auto;
     float: none;
     $image: 'contact.jpg';
@@ -619,49 +622,52 @@ section {
   .contact-info {
     @include both-align(absolute, 50%, 50%);
     width: 95%;
-    p {
-      color: $color-light-yellow;
-      font-weight: 300;
-      font-size: 20px;
-      padding: 10px 20px 0 20px;
-    }
+
     .contact-box {
       background-color: $color-white;
       margin: 0 auto;
-      min-height: 300px;
+      min-height: 450px;
       margin: 30px 10px;
       width: auto;
-      h4 {
+       h4 {
         color: $color-dark-grey;
         font-size: 30px;
         font-weight: 700;
-        padding: 50px 0;
-      }
-      p {
-        color: $color-dark-grey;
-        font-size: 15px;
-        cursor: pointer;
+        padding: 30px 0 20px 0;
       }
     }
-  }
 
-  .hide {
-    display: none;
-  }
+    .info-normal {
+      display: block;
+      p {
+        color: $color-dark-grey;
+        font-family: $font-as;
+        font-size: 20px;
+        padding: 0 20px;
+        &.slah {
+          font-family: $font-ms;
+          font-size: 50px;
+          padding-bottom: 20px;
+        }
+        &.connect {
+          padding-bottom: 20px;
+        }
+      }
+    }
 
-  .show {
-    display: block;
-  }
+    .hide {
+      display: none;
+    }
 
-  .contact-info-hover {
-    @include both-align(absolute, 50%, 50%);
-    width: 95%;
-    h4 {
+    .info-hover {
+      display: none;
+     h4 {
       color: $color-dark-grey;
       font-size: 25px;
       padding: 30px 10px 15px 10px;
-    }
-    .contact-box-hover {
+     }
+
+      .contact-form {
       background-color: $color-white;
       margin: 0 auto;
       min-height: 450px;
@@ -729,7 +735,14 @@ section {
 
 
     }
+
+    }
   }
+
+
+
+
+
 
 
 
@@ -772,6 +785,13 @@ section {
 
 
 @media (min-width: 700px) {
+  .bg-image {
+    background: {
+      size: cover;
+      attachment: fixed;
+    }
+  }
+
 	.nav-info {
 		margin-left: 80px;
 		margin-bottom: 10px;
@@ -953,6 +973,32 @@ section {
       display: block;
     }
   }
+
+  #contact {
+    .desktop {
+      display: block;
+    }
+
+    .mobile {
+      display: none;
+      visibility: none;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 1024px) {

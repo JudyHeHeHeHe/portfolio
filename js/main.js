@@ -100,20 +100,24 @@ $(document).ready(function () {
     }
 });
 
-   $("#connect").click(function(){
-    $(".contact-info-hover").removeClass("hide");
-    $(".contact-info").addClass("hide");
-   });
+   // $(".contact-box").hover(function(){
 
-$(".judyssite").click(function(e){
-  e.preventDefault();
-  var myInfo = document.getElementById("contact-info");
-  var myInfoHover = document.getElementById("contact-info-hover");
-  if (myInfo.classList.contains('hide')){
-    myInfo.classList.remove('hide');
-    myInfoHover.classList.add('hide');
+   //  $("#info-hover").filter(':not(:animated)').toggle(500);
+   //  $("#info-normal").filter(':not(:animated)').toggle(500);
+   // });
+
+   $(".contact-box").hover(
+  function () {
+    $("#info-hover").fadeIn();
+    $("#info-normal").hide();
+  },
+  function () {
+    $("#info-hover").hide();
+    $("#info-normal").fadeIn();
   }
-});
+);
+
+
 
 
 })(jQuery);
