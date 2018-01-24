@@ -62,6 +62,8 @@ bar3.animate(0.7);  // Number from 0.0 to 1.0
 bar4.animate(0.5);  // Number from 0.0 to 1.0
 
 
+
+
 (function($){
 $(document).ready(function () {
   //initialize swiper when document ready
@@ -100,27 +102,90 @@ $(document).ready(function () {
     }
 });
 
-   // $(".contact-box").hover(function(){
 
-   //  $("#info-hover").filter(':not(:animated)').toggle(500);
-   //  $("#info-normal").filter(':not(:animated)').toggle(500);
-   // });
-
-   $(".contact-box").hover(
+  //contact box animation
+   $(".contact-container").hover(
   function () {
-    $("#info-hover").fadeIn();
-    $("#info-normal").hide();
+    $("#info-normal").stop().hide(500);
+    $("#info-hover").stop().fadeIn(800);
+    $(".social-links").stop().fadeIn(800);
+
   },
   function () {
-    $("#info-hover").hide();
-    $("#info-normal").fadeIn();
+    $("#info-hover").stop().fadeOut(500);
+    $(".social-links").stop().fadeOut(500);
+    $("#info-normal").stop().show(800);
   }
 );
 
 
+ //scroll to top
+  $(window).scroll(function(){
+  var height=$(window).scrollTop();
+  if (height>100){
+    $("#up-button").fadeIn();
+  } else {
+    $("#up-button").fadeOut();
+  }
+ });
 
+ $("#up-button").click(function(event){
+
+  $("html, body").animate({ scrollTop:0 }, "slow");
+  return false;
+ });
+
+ // Select all links with hashes
+$('a[href*="#"]')
+  .click(function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+
+  });
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
