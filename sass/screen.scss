@@ -12,6 +12,10 @@ body {
 }
 
 body {
+ -moz-transition:opacity 700ms;
+ -o-transition:opacity 700ms;
+ -webkit-transition:opacity 700ms;
+ transition:opacity 700ms;
  font-size: 100%;
  text-align: center;
  font-size: 16px;
@@ -21,6 +25,14 @@ body {
  overflow-x: hidden;
  -webkit-overflow-scrolling: touch;
  background-color: $color-light-yellow;
+}
+
+body.hidden-body{
+    opacity:0;
+    -moz-transition:opacity 700ms;
+    -o-transition:opacity 700ms;
+    -webkit-transition:opacity 700ms;
+    transition:opacity 700ms;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, li, dt, dd, label, div, span {
@@ -153,6 +165,7 @@ em {
 .bg-image {
   width: 100%;
   height: 100%;
+  min-height: 1500px;
   $image: 'cv.jpg';
   margin: 0 auto;
   background: {
@@ -170,6 +183,10 @@ nav {
   background-color: $color-white;
   margin: 0 auto;
   overflow: hidden;
+  -moz-transition:200ms;
+  -o-transition:200ms;
+  -webkit-transition:200ms;
+  transition:200ms;
 }
 
 .nav {
@@ -197,6 +214,10 @@ nav {
 
 .show {
   display: block !important;
+}
+
+.visible {
+  visibility: 1;
 }
 
 .nav-mobile {
@@ -457,6 +478,7 @@ section {
         color: $color-light-yellow;
       }
       .pie {
+        visibility: 0;
         width: 240px;
         -webkit-border-radius: 120px;
         -moz-border-radius: 120px;
@@ -771,24 +793,24 @@ footer {
 }
 
 #up-button {
-  display: none;
+
   position: fixed;
   bottom: 4%;
   right: 3%;
   z-index: 998;
-.center-con {
-    display: flex;
+
+    display: none;
     height: auto;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
+
 
 .round {
     position: relative;
     border: 3px solid $color-dark-grey;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
 
@@ -796,7 +818,7 @@ span {
     z-index: 999;
     height: 3px;
     margin:1px;
-    width: 20px;
+    width: 15px;
     background: $color-dark-grey;
     transition: 0.4s ease;
 }
@@ -805,7 +827,7 @@ span:first-child {
     display: block;
     position: absolute;
     transform: rotate(135deg);
-    left: 25%;
+    left: 21%;
     bottom: 35%;
 }
 
@@ -813,7 +835,7 @@ span:nth-child(2) {
     display: block;
     position: absolute;
     transform: rotate(45deg);
-    left: 45%;
+    left: 43%;
     bottom: 35%;
 }
 
@@ -821,7 +843,7 @@ span:nth-child(3) {
     display: block;
     position: absolute;
     transform: rotate(135deg);
-    left: 25%;
+    left: 21%;
     bottom: 54%;
 }
 
@@ -829,7 +851,7 @@ span:nth-child(4) {
     display: block;
     position: absolute;
     transform: rotate(45deg);
-    left: 45%;
+    left: 43%;
     bottom: 54%;
 }
 
@@ -867,7 +889,6 @@ span:nth-child(4) {
 @media (min-width: 700px) {
   .bg-image {
     background: {
-      size: cover;
       attachment: fixed;
     }
   }
@@ -966,6 +987,10 @@ span:nth-child(4) {
 
 
 #cv {
+  .cv-container-medium {
+    height: 500px;
+  }
+
   .cv-container {
     li {
       display: inline-block;

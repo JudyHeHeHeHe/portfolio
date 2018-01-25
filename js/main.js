@@ -19,7 +19,7 @@ function myFunction() {
 var bar1 = new ProgressBar.Circle(progress1, {
   strokeWidth: 5,
   easing: 'easeInOut',
-  duration: 1400,
+  duration: 1000,
   color: '#df988c',
   trailColor: '#8f9595',
   trailWidth: 2,
@@ -29,7 +29,7 @@ var bar1 = new ProgressBar.Circle(progress1, {
 var bar2 = new ProgressBar.Circle(progress2, {
   strokeWidth: 6,
   easing: 'easeInOut',
-  duration: 1400,
+  duration: 1000,
   color: '#df988c',
   trailColor: '#8f9595',
   trailWidth: 1,
@@ -39,7 +39,7 @@ var bar2 = new ProgressBar.Circle(progress2, {
 var bar3 = new ProgressBar.Circle(progress3, {
   strokeWidth: 5,
   easing: 'easeInOut',
-  duration: 1400,
+  duration: 1000,
   color: '#df988c',
   trailColor: '#8f9595',
   trailWidth: 2,
@@ -49,17 +49,14 @@ var bar3 = new ProgressBar.Circle(progress3, {
 var bar4 = new ProgressBar.Circle(progress4, {
   strokeWidth: 6,
   easing: 'easeInOut',
-  duration: 1400,
+  duration: 1000,
   color: '#df988c',
   trailColor: '#8f9595',
   trailWidth: 1,
   svgStyle: null
 });
 
-bar1.animate(0.9);  // Number from 0.0 to 1.0
-bar2.animate(0.8);  // Number from 0.0 to 1.0
-bar3.animate(0.7);  // Number from 0.0 to 1.0
-bar4.animate(0.5);  // Number from 0.0 to 1.0
+
 
 
 
@@ -158,6 +155,25 @@ $('a[href*="#"]')
     } // End if
 
   });
+
+  //fade in the site
+  $("body").removeClass("hidden-body").find("nav").css('top',0);
+
+
+  $(window).scroll(function(){
+  var height=$(window).scrollTop();
+  if (height > 300){
+    bar1.animate(0.9);
+    bar2.animate(0.8);
+    bar3.animate(0.7);
+    bar4.animate(0.5);
+  } else {
+    bar1.animate(0.0);
+    bar2.animate(0.0);
+    bar3.animate(0.0);
+    bar4.animate(0.0);
+  }
+ });
 
 })(jQuery);
 
